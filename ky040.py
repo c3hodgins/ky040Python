@@ -13,7 +13,8 @@ class ky040:
         self.prevB = 0
         self.currA = 0
         self.currB = 0
-
+    def btn(self):
+        return self.C.value
     def dir(self):
         num = 0
         
