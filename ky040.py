@@ -3,7 +3,6 @@ from gpiozero import  GPIODevice,DigitalInputDevice,DigitalOutputDevice
 from time import sleep
 
 class ky040:
-
     def __init__(self, CLK, DT, SW):
         self.A = DigitalInputDevice(CLK)
         self.B = DigitalInputDevice(DT)
@@ -17,7 +16,6 @@ class ky040:
         return self.C.value
     def dir(self):
         num = 0
-        
         self.prevA = self.currA
         self.prevB = self.currB
         self.currA = self.A.value
@@ -28,14 +26,3 @@ class ky040:
             elif self.currB == 1 and self.currA == 0:
                 num=-1
         return num
-# count = 0
-# enc = ky040(15,14,18)
-# while(True):
-#     direction = enc.dir()
-#     if direction == 1:
-#         count+=1
-#     elif direction == -1:
-#         count-=1
-    
-#     if direction!= 0:
-#         print(count)
