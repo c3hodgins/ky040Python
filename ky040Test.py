@@ -5,6 +5,9 @@ from time import sleep
 enc = ky040(15,14,18)
 led = DigitalOutputDevice(4)
 
+curState = enc.btn()
+lastState = 0
+led.value = 1
 count = 0
 last = 0
 direction = 0
